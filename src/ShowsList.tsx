@@ -13,22 +13,33 @@ type Props ={
 }
 
 const ShowsList:FC<Props> =({shows, fetchShows, query})=>{
+    useEffect(()=>{
+        fetchShows("show")
+    }, [])
    const handleChange=(event:ChangeEvent<HTMLInputElement>)=>{
         fetchShows(event.target.value)
     };
     console.log('shows', shows)
 return (
-<>
-<div>
-  <input className='border rounded-md' value={query} type="text" placeholder="search" onChange={handleChange}/>  
+<div className="bg-gray-800 h-screen">
+<div className="bg-slate-400 p-4">
+  <input className='border border-gray-200 rounded-md bg-gray-300 placeholder-text-white' 
+  value={query} type="text" placeholder="search" onChange={handleChange}/>  
 </div>
-<div>
+<div className="flex flex-wrap justify-between text-white px-2">
 
 {shows.map((s)=> (
 <ShowRow show={s} key={s.id} />
     ))}
+    <span className="w-32 m-2"/>
+    <span className="w-32 m-2"/>
+    <span className="w-32 m-2"/>
+    <span className="w-32 m-2"/>
+    <span className="w-32 m-2"/>
+    <span className="w-32 m-2"/>
+    <span className="w-32 m-2"/>
 </div>
-</>
+</div>
 )
 };
 

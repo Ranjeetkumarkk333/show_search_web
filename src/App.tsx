@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <div className="p-2">
+    <div>
       <Routes>
         <Route index element={<ShowsList/>}/>
         <Route path ="/details/:id" element={<ShowDetailsPage/>}/>

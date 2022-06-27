@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Show } from "./Modles/show"
+import DefaultImage from "../DefaultImage.png"
 
 type Props = {
     show:Show,
@@ -9,20 +10,20 @@ type Props = {
 const ShowRow:FC<Props> =({show})=>{
     const navigate = useNavigate()
     return (
-    <div className="flex flex-col items-stretch p-2 bg-gray-500 cursor-pointer" onClick = {()=> navigate("/details/" + show.id)}>
-    <div className='w-20 shrink=0'>
-    <img className="w-full" src={show.image?.medium || 
-    "https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"
+    <div className=" p-2  cursor-pointer flex flex-col justify-between "
+     onClick = {()=> navigate("/details/" + show.id)}>
+        
+    <div className='w-32 shrink=0'>
+    <img className="w-full bg-white text-center" src={show.image?.medium || 
+    DefaultImage
     }/>
     </div>
-    <div>
-        <h1>
+    <div className="w-32 ">
+        <h1 className="">
             {show.name}
         </h1>
-        <p>
-            {show.summary}
-        </p>
-    </div>
+        </div>
+    
     
     </div>
     )
