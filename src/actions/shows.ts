@@ -1,10 +1,14 @@
+import { Actor } from "../Modles/actor";
 import { Show } from "../Modles/show";
 
 export const SHOWS_FETCH = 'shows fetch';
-export const SHOWS_FECHED = 'shows fetched';
+export const SHOWS_FETCHED = 'shows fetched';
 
-export const SHOWS_DETAILS_FETCH = 'shows details fetch';
-export const SHOWS_DETAILS_FECHED = 'shows details fetched';
+export const SHOW_DETAILS_FETCH = 'shows details fetch';
+export const SHOW_DETAILS_FETCHED = 'shows details fetched';
+
+export const ACTORS_FETCH = 'actors fetch';
+export const ACTORS_FETCHED = 'actors fetched';
 
 export const showsFetchAction =(query:string)=>({
     type:SHOWS_FETCH,
@@ -12,16 +16,26 @@ export const showsFetchAction =(query:string)=>({
 });
 
 export const showsFetchedAction=(query:string, shows:Show[])=>({
-    type:SHOWS_FECHED,
+    type:SHOWS_FETCHED,
     payload:{query, shows}
 });
 
 export const showDetailsFetchAction =(id:number)=>({
-    type:SHOWS_DETAILS_FETCH ,
+    type:SHOW_DETAILS_FETCH ,
     payload:id
 });
 
 export const showDetailsFetchedAction =(show:Show)=>({
-    type:SHOWS_DETAILS_FECHED,
+    type:SHOW_DETAILS_FETCHED,
     payload:show
+});
+
+export const actorsFetchAction =(showId:number)=>({
+    type:ACTORS_FETCH,
+    payload:showId
+});
+
+export const actorsFetchedAction=(showId:number, actors:Actor[])=>({
+    type:ACTORS_FETCHED,
+    payload:{showId, actors}
 });

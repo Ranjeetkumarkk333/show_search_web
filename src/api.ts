@@ -1,4 +1,5 @@
 import axios from "axios"
+import { Actor } from "./Modles/actor";
 import { Show } from "./Modles/show";
 
 export const getShows = async (query:string)=> {
@@ -10,6 +11,10 @@ export const getShows = async (query:string)=> {
 export const getShowDetails = async (id:number)=> {
     console.log("id", id)
     const response = await axios.get<{show:Show}[]>("https://api.tvmaze.com/shows/" + id);
-    // console.log("rrrrrrrrrrrrrr", response.data)
+    return response.data
+};
+
+export const getActors = async (showId:number)=> {
+    const response = await axios.get<{person:Actor}[]>("https://api.tvmaze.com/shows/" + showId + "/cast");
     return response.data
 };
