@@ -14,7 +14,7 @@ import {
   showsSelector,
 } from "../Selectors/selector";
 import { State } from "../Store/store";
-import "./Spiner.css";
+import "../Spiner.css";
 import { Actor } from "../Modles/actor";
 import ActorRow from "./ActorRow";
 import ShowDetail from "./ShowDetailsRow";
@@ -75,7 +75,7 @@ const ShowDetailsPage: FC<Props> = ({
             <span className="w-32 m-2" />
             <span className="w-32 m-2" />
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between p-4">
             {prev ? (
               <LinkWithQuery to={prev}>Prev</LinkWithQuery>
             ) : (

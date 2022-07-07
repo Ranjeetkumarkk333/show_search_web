@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Show } from "../Modles/show";
-import DefaultImage from "../DefaultImage.png";
+import DefaultImage from "../Images/DefaultImage.png";
 import MDEditor from "@uiw/react-md-editor";
 
 type Props = {

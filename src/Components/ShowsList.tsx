@@ -9,6 +9,7 @@ import {
 } from "../Selectors/selector";
 import ShowRow from "./ShowRow";
 import { State } from "../Store/store";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 type Props = {
   shows: Show[];
@@ -18,10 +19,21 @@ type Props = {
 };
 
 const ShowsList: FC<Props> = ({ shows, showsLoading, fetchShows, query }) => {
+  const [search] = useSearchParams();
+  const navigate = useNavigate();
+  useEffect(() => {
+    const urlQuery = search.get("q");
+    if (urlQuery) {
+      fetchShows(urlQuery);
+      console.log("showlist");
+    }
+  }, []);
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     fetchShows(event.target.value);
+    navigate(`/?q=${event.target.value}`);
   };
-  console.log("showsLoading", showsLoading);
+
   return (
     <div>
       <div className="bg-slate-400 p-4">

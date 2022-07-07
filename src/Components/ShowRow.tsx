@@ -1,13 +1,12 @@
 import { FC, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Show } from "../Modles/show";
-import DefaultImage from "../DefaultImage.png";
+import DefaultImage from "../Images/DefaultImage.png";
 
 type Props = {
   show: Show;
   query: string;
 };
-
 const ShowRow: FC<Props> = ({ show, query }) => {
   const navigate = useNavigate();
   return (

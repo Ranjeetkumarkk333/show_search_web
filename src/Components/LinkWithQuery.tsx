@@ -4,7 +4,7 @@ const LinkWithQuery = ({ children, to, ...props }: any) => {
   const { search } = useLocation();
 
   return (
-    <Link to={to + search} {...props}>
+    <Link className="text-lg" to={to + search} {...props}>
       {children}
     </Link>
   );
