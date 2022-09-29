@@ -6,7 +6,7 @@ import {
   SHOWS_FETCH,
   SHOW_DETAILS_FETCH,
   ACTORS_FETCHED,
-} from "../Actions/shows";
+} from "../actions/shows";
 import { Actor } from "../Modles/actor";
 import { Show } from "../Modles/show";
 
