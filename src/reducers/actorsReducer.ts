@@ -1,6 +1,6 @@
 import { normalize, schema } from "normalizr";
 import { Reducer } from "redux";
-import { ACTORS_FETCHED } from "../Actions/shows";
+import { ACTORS_FETCHED } from "../actions/shows";
 import { Actor } from "../Modles/actor";
 
 type actorState = {
