@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import actorReducer from "../Reducers/actorsReducer";
-import showReducer from "../Reducers/showReducer";
+import actorReducer from "../reducers/actorsReducer";
+import showReducer from "../reducers/showReducer";
 import { rootSaga, sagaMiddleware } from "../Sagas/sagas";
 
 const reducer = combineReducers({
