@@ -36,18 +36,18 @@ const ShowsList: FC<Props> = ({ shows, showsLoading, fetchShows, query }) => {
 
   return (
     <div>
-      <div className="bg-slate-400 p-4">
+      <div className="p-4 bg-slate-400">
         <input
-          className="border border-gray-200 rounded-md bg-gray-300 placeholder-text-white"
+          className="bg-gray-300 border border-gray-200 rounded-md placeholder-text-white"
           value={query}
           type="text"
           placeholder="search"
           onChange={handleChange}
         />
       </div>
-      <div className="h-8 relative">
+      <div className="relative h-8">
         {!showsLoading && query && (
-          <span className="loader absolute right-12"></span>
+          <span className="absolute loader right-12"></span>
         )}
       </div>
       <div className="flex flex-wrap justify-betweenpx-2">
