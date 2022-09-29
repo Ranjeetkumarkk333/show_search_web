@@ -4,7 +4,7 @@ import {
   actorsFetchAction,
   showDetailsFetchAction,
   showsFetchAction,
-} from "../Actions/shows";
+} from "../actions/shows";
 import WithRouterProps, { withRouter } from "../Hocs/withRouter";
 import { Show } from "../Modles/show";
 import {
@@ -55,11 +55,11 @@ const ShowDetailsPage: FC<Props> = ({
 
   return (
     <>
-      <h1 className="bg-slate-400 text-white text-xl font-semibold p-2">
+      <h1 className="p-2 text-xl font-semibold text-white bg-slate-400">
         Show Details
       </h1>
-      <div className="h-8 relative">
-        {!loading && <span className="loader absolute right-12"></span>}
+      <div className="relative h-8">
+        {!loading && <span className="absolute loader right-12"></span>}
       </div>
       {show && (
         <div>

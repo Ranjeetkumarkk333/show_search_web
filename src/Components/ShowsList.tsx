@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, memo, useEffect } from "react";
 import { connect } from "react-redux";
-import { showsFetchAction } from "../Actions/shows";
+import { showsFetchAction } from "../actions/shows";
 import { Show } from "../Modles/show";
 import {
   showListLoadingSelector,

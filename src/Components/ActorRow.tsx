@@ -1,24 +1,22 @@
 import { FC, useEffect } from "react";
 import { Actor } from "../Modles/actor";
 import DefaultImage from "../Images/DefaultImage.png";
-import { useNavigate } from "react-router-dom";
 import WithRouterProps, { withRouter } from "../Hocs/withRouter";
 
 type Props = {
   actor: Actor;
 } & WithRouterProps;
-const ActorRow: FC<Props> = ({ actor, navigate, search, params }) => {
-  const query = search.get("q");
+const ActorRow: FC<Props> = ({ actor, navigate}) => {
   useEffect(() => {});
   return (
     <div
-      className=" p-2  cursor-pointer flex flex-col justify-between "
+      className="flex flex-col justify-between p-2 cursor-pointer "
       key={actor.id}
       onClick={() => navigate(`${actor.id}`)}
     >
       <div className="w-32 shrink=0">
         <img
-          className="w-full bg-white text-center"
+          className="w-full text-center bg-white"
           src={actor.image?.medium || DefaultImage}
         />
       </div>

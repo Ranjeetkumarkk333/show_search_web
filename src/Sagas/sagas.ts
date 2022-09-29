@@ -8,7 +8,7 @@ import {
   SHOWS_FETCH,
   actorsFetchedAction,
   ACTORS_FETCH,
-} from "../Actions/shows";
+} from "../actions/shows";
 import { getActors, getShowDetails, getShows } from "../api";
 import { Actor } from "../Modles/actor";
 
